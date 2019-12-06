@@ -1,0 +1,659 @@
+html,
+body,
+.container {
+  height: 100%;
+}
+
+body {
+  /* background: #e74c3c;
+  overflow: hidden; */
+  /* color: #333;
+  background: rgb(0, 0, 0);
+  background: url("../img/page-bg.png") no-repeat center center/cover;
+  overflow: hidden;
+  height: 100vh; */
+  background-color: #928a97;
+  background-image: url("https://images.pexels.com/photos/257909/pexels-photo-257909.jpeg?fit=crop&w=1920&h=1280");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.merrywrap {
+  position: absolute;
+  right: 40px;
+  left: 40px;
+  bottom: 40px;
+  top: 40px;
+}
+
+.giftbox {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  margin-left: -150px;
+  bottom: 0;
+  z-index: 10;
+}
+.giftbox > div {
+  background: #000000;
+  position: absolute;
+}
+.giftbox > div:after,
+.giftbox > div:before {
+  position: absolute;
+  content: "";
+  top: 0;
+}
+.giftbox:after {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  content: "";
+  left: 0;
+  bottom: 0;
+  font-size: 24px;
+  text-align: center;
+  transform: rotate(-20deg);
+  transform-origin: 0 0;
+}
+.giftbox .cover {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 25%;
+  z-index: 2;
+}
+.giftbox .cover:before {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  width: 50px;
+  transform: translateX(-50%);
+  background: #ffff;
+}
+.giftbox .cover > div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: -50px;
+  transform: translateX(-50%);
+}
+.giftbox .cover > div:before,
+.giftbox .cover > div:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  box-shadow: inset 0 0 0 15px #ffff;
+  border-radius: 30px;
+  transform-origin: 50% 100%;
+}
+.giftbox .cover > div:before {
+  transform: translateX(-45%) skewY(40deg);
+}
+.giftbox .cover > div:after {
+  transform: translateX(45%) skewY(-40deg);
+}
+.giftbox .box {
+  right: 5%;
+  left: 5%;
+  height: 80%;
+  bottom: 0;
+}
+.giftbox .box:before {
+  width: 50px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffff;
+}
+.giftbox .box:after {
+  width: 100%;
+  height: 30px;
+  background: rgba(51, 51, 51, 0.1803921568627451);
+}
+
+.icons {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
+}
+.icons .row {
+  width: 100%;
+  text-align: center;
+}
+.icons .row span {
+  color: #fff;
+  text-shadow: 5px 5px 0 #ca3121;
+  font-size: 84px;
+  display: inline-block;
+  opacity: 0;
+  transition: transform 0.5s ease-in, opacity 0.7s;
+}
+
+.step-1 .giftbox {
+  animation: wobble 0.5s linear infinite forwards;
+}
+.step-1 .cover {
+  animation: wobble 0.5s linear infinite 0.1s forwards;
+}
+.step-1 .icons .row span {
+  opacity: 1;
+}
+
+.step-2 .giftbox:after {
+  opacity: 0;
+}
+
+.step-3 .giftbox,
+.step-4 .giftbox {
+  opacity: 0;
+  z-index: 1;
+}
+.step-3 .giftbox:after,
+.step-4 .giftbox:after {
+  opacity: 0;
+}
+
+.step-2 .giftbox .cover {
+  animation: flyUp 0.4s ease-in forwards;
+}
+.step-2 .giftbox .box {
+  animation: flyDown 0.2s ease-in 0.05s forwards;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(4deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+@keyframes flyUp {
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(20deg);
+    opacity: 0;
+  }
+}
+@keyframes flyDown {
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+.step-1 .icons .row span {
+  opacity: 0;
+}
+
+.step-1 .icons .row span:first-child {
+  transform: translateY(700%) translateX(600%);
+}
+
+.step-1 .icons .row span:nth-child(2) {
+  transform: translateY(700%) translateX(500%);
+}
+
+.step-1 .icons .row span:nth-child(3) {
+  transform: translateY(700%) translateX(400%);
+}
+
+.step-1 .icons .row span:nth-child(4) {
+  transform: translateY(700%) translateX(300%);
+}
+
+.step-1 .icons .row span:nth-child(5) {
+  transform: translateY(700%) translateX(200%);
+}
+
+.step-1 .icons .row span:nth-child(6) {
+  transform: translateY(700%) translateX(100%);
+}
+
+.step-1 .icons .row span:nth-child(7) {
+  transform: translateY(700%) translateX(0);
+}
+
+.step-1 .icons .row span:nth-child(8) {
+  transform: translateY(700%) translateX(-100%);
+}
+
+.step-1 .icons .row span:nth-child(9) {
+  transform: translateY(700%) translateX(-200%);
+}
+
+.step-1 .icons .row span:nth-child(10) {
+  transform: translateY(700%) translateX(-300%);
+}
+
+.step-1 .icons .row span:nth-child(11) {
+  transform: translateY(700%) translateX(-400%);
+}
+
+.step-1 .icons .row span:nth-child(12) {
+  transform: translateY(700%) translateX(-500%);
+}
+
+.step-1 .icons .row span:nth-child(13) {
+  transform: translateY(700%) translateX(-600%);
+}
+.step-1 .icons .row span:nth-child(14) {
+  transform: translateY(700%) translateX(-700%);
+}
+
+.step-1 .icons .row span:nth-child(15) {
+  transform: translateY(700%) translateX(-800%);
+}
+
+.step-2 .icons .row span:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.step-2 .icons .row span:nth-child(3) {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+.step-2 .icons .row span:nth-child(4) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.step-2 .icons .row span:nth-child(5) {
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.step-2 .icons .row span:nth-child(6) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.step-2 .icons .row span:nth-child(7) {
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+
+.step-2 .icons .row span:nth-child(8) {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.step-2 .icons .row span:nth-child(9) {
+  -webkit-transition-delay: 0.45s;
+  transition-delay: 0.45s;
+}
+
+.step-2 .icons .row span:nth-child(10) {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.step-2 .icons .row span:nth-child(11) {
+  -webkit-transition-delay: 0.55s;
+  transition-delay: 0.55s;
+}
+
+.step-2 .icons .row span:nth-child(12) {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.step-2 .icons .row span:nth-child(13) {
+  -webkit-transition-delay: 0.65s;
+  transition-delay: 0.65s;
+}
+
+.step-2 .icons .row span:nth-child(14) {
+  -webkit-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+.step-2 .icons .row span:nth-child(15) {
+  -webkit-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+}
+
+.step-2 .icons span,
+.step-3 .icons span,
+.step-4 .icons span {
+  opacity: 0.7;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 0.91);
+}
+
+.step-4 .icons .row span,
+.step-3 .icons .row span {
+  animation: wobble 0.6s linear infinite forwards;
+}
+
+.step-4 .icons .row span:nth-child(even),
+.step-3 .icons .row span:nth-child(even) {
+  animation-duration: 0.7s;
+}
+
+/* card */
+@import url("https://fonts.googleapis.com/css?family=Mirza&amp;subset=latin-ext");
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  -webkit-perspective: 1500px;
+  perspective: 1500px;
+  position: absolute;
+  left: calc(50% - 175px);
+  top: calc(50% - 250px);
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-delay: initial;
+  -webkit-transform: rotate(-10deg) translate(0, 0);
+  transform: rotate(-10deg) translate(0, 0);
+  -webkit-animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+@media (max-width: 767px) {
+  .card {
+    left: calc(50% - 115px);
+    top: calc(50% - 164.5px);
+  }
+}
+@media (max-width: 479px) {
+  .card {
+    left: calc(50% - 75px);
+    top: calc(50% - 107px);
+  }
+}
+.card:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 50px #000;
+  transition: all 0.5s ease-in-out;
+}
+.card.is-opened {
+  -webkit-transform: rotate(0deg) translate(175px, 0);
+  transform: rotate(0deg) translate(175px, 0);
+}
+@media (max-width: 767px) {
+  .card.is-opened {
+    -webkit-transform: rotate(0deg) translate(115px, 0);
+    transform: rotate(0deg) translate(115px, 0);
+  }
+}
+@media (max-width: 479px) {
+  .card.is-opened {
+    -webkit-transform: rotate(0deg) translate(75px, 0);
+    transform: rotate(0deg) translate(75px, 0);
+  }
+}
+.card.is-opened .cart-page-front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+@-webkit-keyframes cardIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-10deg) translate(0, -100%);
+    transform: rotate(-10deg) translate(0, -100%);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(-10deg) translate(0, 0);
+    transform: rotate(-10deg) translate(0, 0);
+  }
+}
+
+@keyframes cardIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-10deg) translate(0, -100%);
+    transform: rotate(-10deg) translate(0, -100%);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(-10deg) translate(0, 0);
+    transform: rotate(-10deg) translate(0, 0);
+  }
+}
+.card,
+.card-page {
+  width: 350px;
+  height: 500px;
+}
+@media (max-width: 767px) {
+  .card,
+  .card-page {
+    width: 230px;
+    height: 329px;
+  }
+}
+@media (max-width: 479px) {
+  .card,
+  .card-page {
+    width: 150px;
+    height: 214px;
+  }
+}
+
+.card-page {
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  outline: 1px solid transparent;
+}
+
+.cart-page-front {
+  -webkit-transform-origin: 0 50% 0;
+  transform-origin: 0 50% 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(-20deg);
+  transform: rotateY(-20deg);
+  z-index: 2;
+}
+
+.cart-page-outside,
+.cart-page-inside {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+
+.cart-page-outside {
+  border: 10px solid #fbfbfb;
+  background: #0000 url("../img/front-bg.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  .cart-page-outside {
+    border: 5px solid #fbfbfb;
+  }
+}
+
+.cart-page-inside,
+.cart-page-bottom {
+  background-color: #d4d1d0;
+  background-image: url("https://www.dropbox.com/s/8hw7guch8d151kg/pattern.png?raw=1");
+  border: 20px solid #d4d1d0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -moz-flex;
+  display: flex;
+  box-pack: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  box-align: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .cart-page-inside,
+  .cart-page-bottom {
+    border: 10px solid #d4d1d0;
+  }
+}
+
+.cart-page-inside {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  border-right: none !important;
+  background-position: 0px 80px;
+}
+@media (max-width: 767px) {
+  .cart-page-inside {
+    background-position: 0px 30px;
+  }
+}
+@media (max-width: 479px) {
+  .cart-page-inside {
+    background-position: 0px 30px;
+  }
+}
+
+.cart-page-bottom {
+  z-index: 1;
+  border-left: none !important;
+  background-position: -22px 80px;
+}
+@media (max-width: 767px) {
+  .cart-page-bottom {
+    background-position: 85px 30px;
+  }
+}
+@media (max-width: 479px) {
+  .cart-page-bottom {
+    background-position: 0px 30px;
+  }
+}
+
+.merry-christmas {
+  -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+.merry-christmas svg {
+  width: 350px;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .merry-christmas svg {
+    width: 200px;
+  }
+}
+@media (max-width: 479px) {
+  .merry-christmas svg {
+    width: 150px;
+  }
+}
+
+.click-icon {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  bottom: 20px;
+  -webkit-animation: iconAnimation 1s infinite alternate ease-in-out;
+  animation: iconAnimation 1s infinite alternate ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+.click-icon svg {
+  width: 96px;
+  height: 96px;
+}
+@media (max-width: 767px) {
+  .click-icon svg {
+    width: 72px;
+    height: 72px;
+  }
+}
+@media (max-width: 479px) {
+  .click-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+.click-icon.is-hidden {
+  opacity: 0;
+}
+
+@-webkit-keyframes iconAnimation {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 10px);
+    transform: translate(-50%, 10px);
+  }
+}
+
+@keyframes iconAnimation {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 10px);
+    transform: translate(-50%, 10px);
+  }
+}
+p {
+  font-family: "Mirza", Verdana, Arial, serif;
+  font-size: 36px;
+  line-height: 1.2em;
+  padding-left: 10px;
+}
+@media (max-width: 767px) {
+  p {
+    font-size: 24px;
+  }
+}
+@media (max-width: 479px) {
+  p {
+    font-size: 20px;
+  }
+}
+
+/* card */
