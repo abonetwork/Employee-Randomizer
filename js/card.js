@@ -1,5 +1,7 @@
 var running = 0;
 $(document).ready(function() {
+  // carousel
+  // carousel
   var $clickMe = $(".click-icon"),
     $card = $(".card");
 
